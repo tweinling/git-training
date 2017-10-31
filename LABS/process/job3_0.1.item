@@ -2,6 +2,8 @@
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" value="" show="false"/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" value="" show="false"/>
@@ -108,4 +110,25 @@
     <routinesParameter id="_RhkhkL5REee5xJeTHEn_vQ" name="TalendStringUtil"/>
     <routinesParameter id="_Rhb-sL5REee5xJeTHEn_vQ" name="TalendString"/>
   </parameters>
+  <node componentName="tKafkaCreateTopic" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="224" posY="160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tKafkaCreateTopic_1" show="false"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="" show="false"/>
+    <elementParameter field="CLOSED_LIST" name="KAFKA_VERSION" value="KAFKA_0_10_0_1"/>
+    <elementParameter field="TEXT" name="ZOOKEEPER_CONNECT" value="&quot;zk1:port1,zk2:port2,...&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="TOPICACTION" value="CREATE_TOPIC"/>
+    <elementParameter field="TEXT" name="KAFKA_TOPIC" value="&quot;mytopic&quot;"/>
+    <elementParameter field="TEXT" name="KAFKA_REPLICATION" value="1"/>
+    <elementParameter field="TEXT" name="KAFKA_PARTITION" value="1"/>
+    <elementParameter field="CHECK" name="KAFKA_RETENTION_CHECK" value="false"/>
+    <elementParameter field="TEXT" name="KAFKA_RETENTION" value="604800000" show="false"/>
+    <elementParameter field="CHECK" name="ZOOKEEPER_SECURITY_IS_ENABLED" value="false"/>
+    <elementParameter field="TABLE" name="KAFKA_TOPIC_PROPERTIES"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tKafkaCreateTopic_1" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="92;131;150" show="false"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
 </talendfile:ProcessType>
